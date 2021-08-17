@@ -8,8 +8,8 @@ General game information and rules can be read at https://en.wikipedia.org/wiki/
 
 ## Program arguments
 
-1. Number of colors a code peg can have
-2. Number of pegs per code
+1. Number of different colors(integers max 9) a code can have
+2. Length of code to be used
 3. Number of rows in a game  
 4. Number of games to play
 
