@@ -1,17 +1,25 @@
-//
-// Created by jens on 8/3/21.
-//
+#include "HumanPlayer.h"
+#include "TerminalFunctionality.h"
 
-#include "../include/HumanPlayer.h"
-
-void HumanPlayer::getCodeGuess(std::vector<int> &code_peg_row) {
-    getCodeFromConsole(code_peg_row);
+void HumanPlayer::get_code(std::string& code, const bool hide_input) const
+{
+	get_code_from_terminal(code, hide_input);
 }
 
-void HumanPlayer::getCodeGuessFeedback(const std::vector<int> &code_peg_row, std::vector<int> &key_peg_row) {
-    getCodeFromConsole(key_peg_row);
+void HumanPlayer::get_code_feedback(std::string& code_feedback, const std::string&) const
+{
+	get_code_from_terminal(code_feedback, false);
 }
 
-void HumanPlayer::getCode(std::vector<int> &code_peg_row) {
-    getCodeFromConsole(code_peg_row, true);
+void HumanPlayer::get_code_from_terminal(std::string& code, bool hide_input) const
+{
+	if (hide_input) {
+		code = tf::get_pass("", true);
+	}
+	else {
+		std::getline(std::cin, code);
+	}
 }
+
+
+

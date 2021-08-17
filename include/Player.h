@@ -4,30 +4,22 @@
 #include "string"
 #include "vector"
 
-// Player base class. The intention of the base class is to allow for implementations computer players
+// Player base class. The intention of the base class is to allow for implementations computer players hence the virtual get_code and get_code_feedback functions
 class Player {
 public:
-    Player();
+	explicit Player(std::string name);
 
-// Code Breaker
-    // Get attempt at guessing code
-    virtual void getCodeGuess(std::vector<int> &code_peg_row) = 0;
+	virtual ~Player() = default;
 
-// Code Maker
-    // Get feedback infomation given a code guess
-    virtual void getCodeGuessFeedback(const std::vector<int> &code_peg_row, std::vector<int> &key_peg_row) = 0;
+	// Get a code from the player secrete or code. Option for hiding the input in the case of a human player
+	virtual void get_code(std::string& code, bool hide_input) const = 0;
 
-    // Get the code to be guessed
-    virtual void getCode(std::vector<int> &code_peg_row) = 0;
+	// Get code feedback based on given code.
+	virtual void get_code_feedback(std::string& code_feedback, const std::string& code) const = 0;
 
-protected:
-// Utility functions
-    // Reads line from cin and converts chars to intergers. Can optionally replace typed characters with asterisks
-    static void getCodeFromConsole(std::vector<int> &code_peg_row, bool hide_input = false);
+	std::string name;
 
-    // Convertion from string to integer vector
-    static void stringToIntVec(std::string &code_string, std::vector<int> &code_peg_row);
+	int score = 0;
 };
-
 
 #endif //MASTERMIND_PLAYER_H

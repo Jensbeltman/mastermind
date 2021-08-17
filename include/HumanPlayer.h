@@ -4,15 +4,18 @@
 #include "Player.h"
 
 class HumanPlayer : public Player {
-// Code Breaker
-    void getCodeGuess(std::vector<int> &code_peg_row) override;
+public:
+	// Using inherited constructor
+	using Player::Player;
 
-// Code Maker
-    void getCodeGuessFeedback(const std::vector<int> &code_peg_row, std::vector<int> &key_peg_row) override;
+	// Get code from terminal
+	void get_code(std::string& code, bool hide_input) const override;
 
-    void getCode(std::vector<int> &code_peg_row) override;
-
+	// Get code feedback from terminal (same as get_code)
+	virtual void get_code_feedback(std::string& code_feedback, const std::string& code) const override;
+private:
+	// Reads line from cin and converts chars to intergers. Can optionally replace typed characters with asterisks
+	void get_code_from_terminal(std::string& code, bool hide_input = false) const;
 };
-
 
 #endif //MASTERMIND_HUMANPLAYER_H

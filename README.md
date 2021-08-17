@@ -1,6 +1,6 @@
-# Mastermind game
+# Game game
 
-Mastermind game with command line interface
+Game game with command line interface
 
 General game information and rules can be read at https://en.wikipedia.org/wiki/Mastermind_(board_game).
 
