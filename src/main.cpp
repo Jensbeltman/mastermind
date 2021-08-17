@@ -1,8 +1,6 @@
 #include <iostream>
 
-#include "../include/Game.h"
-
-using namespace std;
+#include "Game.h"
 
 int main(int argc, char** argv)
 {

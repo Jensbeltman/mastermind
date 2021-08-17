@@ -1,11 +1,9 @@
 #include "Player.h"
-
-Player::Player(std::string name)
-		:name(name)
-{
+namespace mastermind {
+	Player::Player(std::string name)
+	:name(name)
+	{
+	}
 }
-
-
-
 
 
