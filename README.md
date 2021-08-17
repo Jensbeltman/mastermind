@@ -1,6 +1,8 @@
-# Game game
-
-Game game with command line interface
+# Mastermind game
+Mastermind game with command line interface. 
+- Compiled with on linux(ubuntu budgie 20.04.2) using gcc 9.3.0 using .
+- Cmake version 3.16.3 was used and is set a requirement but older version will properly work too.
+- c++ 20 features used(see cmake).
 
 General game information and rules can be read at https://en.wikipedia.org/wiki/Mastermind_(board_game).
 
